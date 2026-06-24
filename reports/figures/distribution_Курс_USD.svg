@@ -1,0 +1,121 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="520" viewBox="0 0 900 520">
+<style>
+text{font-family:Arial,Helvetica,sans-serif;fill:#17202a} .muted{fill:#5d6d7e;font-size:12px}
+.title{font-size:20px;font-weight:700}.axis{stroke:#aeb6bf;stroke-width:1}.grid{stroke:#e5e8e8;stroke-width:1}
+</style>
+<rect width="100%" height="100%" fill="#ffffff"/>
+<text x="80" y="38" class="title">Distribution: Курс_USD</text>
+<line x1="80" y1="70.0" x2="870" y2="70.0" class="grid"/>
+<text x="70" y="74.0" text-anchor="end" class="muted">926.00</text>
+<line x1="80" y1="138.0" x2="870" y2="138.0" class="grid"/>
+<text x="70" y="142.0" text-anchor="end" class="muted">740.80</text>
+<line x1="80" y1="206.0" x2="870" y2="206.0" class="grid"/>
+<text x="70" y="210.0" text-anchor="end" class="muted">555.60</text>
+<line x1="80" y1="274.0" x2="870" y2="274.0" class="grid"/>
+<text x="70" y="278.0" text-anchor="end" class="muted">370.40</text>
+<line x1="80" y1="342.0" x2="870" y2="342.0" class="grid"/>
+<text x="70" y="346.0" text-anchor="end" class="muted">185.20</text>
+<line x1="80" y1="410.0" x2="870" y2="410.0" class="grid"/>
+<text x="70" y="414.0" text-anchor="end" class="muted">0</text>
+<line x1="80" y1="410.0" x2="870" y2="410.0" class="axis"/>
+<rect x="82.2" y="409.6" width="11.4" height="1.0" fill="#2166ac"/>
+<text transform="translate(87.9,450) rotate(-45)" text-anchor="end" class="muted">-2.717538</text>
+<rect x="98.0" y="410.0" width="11.4" height="1.0" fill="#d6604d"/>
+<text transform="translate(103.7,450) rotate(-45)" text-anchor="end" class="muted">-2.60864</text>
+<rect x="113.8" y="410.0" width="11.4" height="1.0" fill="#4393c3"/>
+<text transform="translate(119.5,450) rotate(-45)" text-anchor="end" class="muted">-2.499741</text>
+<rect x="129.6" y="410.0" width="11.4" height="1.0" fill="#b2182b"/>
+<text transform="translate(135.3,450) rotate(-45)" text-anchor="end" class="muted">-2.390842</text>
+<rect x="145.4" y="410.0" width="11.4" height="1.0" fill="#4d9221"/>
+<text transform="translate(151.1,450) rotate(-45)" text-anchor="end" class="muted">-2.281944</text>
+<rect x="161.2" y="410.0" width="11.4" height="1.0" fill="#9970ab"/>
+<text transform="translate(166.9,450) rotate(-45)" text-anchor="end" class="muted">-2.173045</text>
+<rect x="177.0" y="410.0" width="11.4" height="1.0" fill="#f4a582"/>
+<text transform="translate(182.7,450) rotate(-45)" text-anchor="end" class="muted">-2.064146</text>
+<rect x="192.8" y="410.0" width="11.4" height="1.0" fill="#92c5de"/>
+<text transform="translate(198.5,450) rotate(-45)" text-anchor="end" class="muted">-1.955248</text>
+<rect x="208.6" y="410.0" width="11.4" height="1.0" fill="#2166ac"/>
+<text transform="translate(214.3,450) rotate(-45)" text-anchor="end" class="muted">-1.846349</text>
+<rect x="224.4" y="410.0" width="11.4" height="1.0" fill="#d6604d"/>
+<text transform="translate(230.1,450) rotate(-45)" text-anchor="end" class="muted">-1.73745</text>
+<rect x="240.2" y="410.0" width="11.4" height="1.0" fill="#4393c3"/>
+<text transform="translate(245.9,450) rotate(-45)" text-anchor="end" class="muted">-1.628552</text>
+<rect x="256.0" y="410.0" width="11.4" height="1.0" fill="#b2182b"/>
+<text transform="translate(261.7,450) rotate(-45)" text-anchor="end" class="muted">-1.519653</text>
+<rect x="271.8" y="410.0" width="11.4" height="1.0" fill="#4d9221"/>
+<text transform="translate(277.5,450) rotate(-45)" text-anchor="end" class="muted">-1.410754</text>
+<rect x="287.6" y="410.0" width="11.4" height="1.0" fill="#9970ab"/>
+<text transform="translate(293.3,450) rotate(-45)" text-anchor="end" class="muted">-1.301856</text>
+<rect x="303.4" y="410.0" width="11.4" height="1.0" fill="#f4a582"/>
+<text transform="translate(309.1,450) rotate(-45)" text-anchor="end" class="muted">-1.192957</text>
+<rect x="319.2" y="410.0" width="11.4" height="1.0" fill="#92c5de"/>
+<text transform="translate(324.9,450) rotate(-45)" text-anchor="end" class="muted">-1.084058</text>
+<rect x="335.0" y="410.0" width="11.4" height="1.0" fill="#2166ac"/>
+<text transform="translate(340.7,450) rotate(-45)" text-anchor="end" class="muted">-0.97516</text>
+<rect x="350.8" y="410.0" width="11.4" height="1.0" fill="#d6604d"/>
+<text transform="translate(356.5,450) rotate(-45)" text-anchor="end" class="muted">-0.866261</text>
+<rect x="366.6" y="409.3" width="11.4" height="1.0" fill="#4393c3"/>
+<text transform="translate(372.3,450) rotate(-45)" text-anchor="end" class="muted">-0.757362</text>
+<rect x="382.4" y="410.0" width="11.4" height="1.0" fill="#b2182b"/>
+<text transform="translate(388.1,450) rotate(-45)" text-anchor="end" class="muted">-0.648464</text>
+<rect x="398.2" y="410.0" width="11.4" height="1.0" fill="#4d9221"/>
+<text transform="translate(403.9,450) rotate(-45)" text-anchor="end" class="muted">-0.539565</text>
+<rect x="414.0" y="410.0" width="11.4" height="1.0" fill="#9970ab"/>
+<text transform="translate(419.7,450) rotate(-45)" text-anchor="end" class="muted">-0.430666</text>
+<rect x="429.8" y="409.6" width="11.4" height="1.0" fill="#f4a582"/>
+<text transform="translate(435.5,450) rotate(-45)" text-anchor="end" class="muted">-0.321768</text>
+<rect x="445.6" y="409.6" width="11.4" height="1.0" fill="#92c5de"/>
+<text transform="translate(451.3,450) rotate(-45)" text-anchor="end" class="muted">-0.212869</text>
+<rect x="461.4" y="70.0" width="11.4" height="340.0" fill="#2166ac"/>
+<text transform="translate(467.1,450) rotate(-45)" text-anchor="end" class="muted">-0.10397</text>
+<rect x="477.2" y="274.1" width="11.4" height="135.9" fill="#d6604d"/>
+<text transform="translate(482.9,450) rotate(-45)" text-anchor="end" class="muted">0.004928</text>
+<rect x="493.0" y="409.6" width="11.4" height="1.0" fill="#4393c3"/>
+<text transform="translate(498.7,450) rotate(-45)" text-anchor="end" class="muted">0.113827</text>
+<rect x="508.8" y="408.9" width="11.4" height="1.1" fill="#b2182b"/>
+<text transform="translate(514.5,450) rotate(-45)" text-anchor="end" class="muted">0.222726</text>
+<rect x="524.6" y="410.0" width="11.4" height="1.0" fill="#4d9221"/>
+<text transform="translate(530.3,450) rotate(-45)" text-anchor="end" class="muted">0.331624</text>
+<rect x="540.4" y="410.0" width="11.4" height="1.0" fill="#9970ab"/>
+<text transform="translate(546.1,450) rotate(-45)" text-anchor="end" class="muted">0.440523</text>
+<rect x="556.2" y="409.3" width="11.4" height="1.0" fill="#f4a582"/>
+<text transform="translate(561.9,450) rotate(-45)" text-anchor="end" class="muted">0.549422</text>
+<rect x="572.0" y="410.0" width="11.4" height="1.0" fill="#92c5de"/>
+<text transform="translate(577.7,450) rotate(-45)" text-anchor="end" class="muted">0.65832</text>
+<rect x="587.8" y="410.0" width="11.4" height="1.0" fill="#2166ac"/>
+<text transform="translate(593.5,450) rotate(-45)" text-anchor="end" class="muted">0.767219</text>
+<rect x="603.6" y="410.0" width="11.4" height="1.0" fill="#d6604d"/>
+<text transform="translate(609.3,450) rotate(-45)" text-anchor="end" class="muted">0.876118</text>
+<rect x="619.4" y="410.0" width="11.4" height="1.0" fill="#4393c3"/>
+<text transform="translate(625.1,450) rotate(-45)" text-anchor="end" class="muted">0.985016</text>
+<rect x="635.2" y="410.0" width="11.4" height="1.0" fill="#b2182b"/>
+<text transform="translate(640.9,450) rotate(-45)" text-anchor="end" class="muted">1.093915</text>
+<rect x="651.0" y="410.0" width="11.4" height="1.0" fill="#4d9221"/>
+<text transform="translate(656.7,450) rotate(-45)" text-anchor="end" class="muted">1.202814</text>
+<rect x="666.8" y="410.0" width="11.4" height="1.0" fill="#9970ab"/>
+<text transform="translate(672.5,450) rotate(-45)" text-anchor="end" class="muted">1.311712</text>
+<rect x="682.6" y="410.0" width="11.4" height="1.0" fill="#f4a582"/>
+<text transform="translate(688.3,450) rotate(-45)" text-anchor="end" class="muted">1.420611</text>
+<rect x="698.4" y="410.0" width="11.4" height="1.0" fill="#92c5de"/>
+<text transform="translate(704.1,450) rotate(-45)" text-anchor="end" class="muted">1.52951</text>
+<rect x="714.2" y="410.0" width="11.4" height="1.0" fill="#2166ac"/>
+<text transform="translate(719.9,450) rotate(-45)" text-anchor="end" class="muted">1.638408</text>
+<rect x="730.0" y="410.0" width="11.4" height="1.0" fill="#d6604d"/>
+<text transform="translate(735.7,450) rotate(-45)" text-anchor="end" class="muted">1.747307</text>
+<rect x="745.8" y="410.0" width="11.4" height="1.0" fill="#4393c3"/>
+<text transform="translate(751.5,450) rotate(-45)" text-anchor="end" class="muted">1.856206</text>
+<rect x="761.6" y="410.0" width="11.4" height="1.0" fill="#b2182b"/>
+<text transform="translate(767.3,450) rotate(-45)" text-anchor="end" class="muted">1.965104</text>
+<rect x="777.4" y="410.0" width="11.4" height="1.0" fill="#4d9221"/>
+<text transform="translate(783.1,450) rotate(-45)" text-anchor="end" class="muted">2.074003</text>
+<rect x="793.2" y="410.0" width="11.4" height="1.0" fill="#9970ab"/>
+<text transform="translate(798.9,450) rotate(-45)" text-anchor="end" class="muted">2.182902</text>
+<rect x="809.0" y="410.0" width="11.4" height="1.0" fill="#f4a582"/>
+<text transform="translate(814.7,450) rotate(-45)" text-anchor="end" class="muted">2.2918</text>
+<rect x="824.8" y="410.0" width="11.4" height="1.0" fill="#92c5de"/>
+<text transform="translate(830.5,450) rotate(-45)" text-anchor="end" class="muted">2.400699</text>
+<rect x="840.6" y="410.0" width="11.4" height="1.0" fill="#2166ac"/>
+<text transform="translate(846.3,450) rotate(-45)" text-anchor="end" class="muted">2.509598</text>
+<rect x="856.4" y="409.6" width="11.4" height="1.0" fill="#d6604d"/>
+<text transform="translate(862.1,450) rotate(-45)" text-anchor="end" class="muted">2.618496</text>
+</svg>

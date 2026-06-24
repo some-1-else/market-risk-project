@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="520" viewBox="0 0 900 520">
+<style>
+text{font-family:Arial,Helvetica,sans-serif;fill:#17202a} .muted{fill:#5d6d7e;font-size:12px}
+.title{font-size:20px;font-weight:700}.axis{stroke:#aeb6bf;stroke-width:1}.grid{stroke:#e5e8e8;stroke-width:1}
+</style>
+<rect width="100%" height="100%" fill="#ffffff"/>
+<text x="80" y="38" class="title">PCA explained variance</text>
+<line x1="80" y1="70.0" x2="870" y2="70.0" class="grid"/>
+<text x="70" y="74.0" text-anchor="end" class="muted">0.610973</text>
+<line x1="80" y1="138.0" x2="870" y2="138.0" class="grid"/>
+<text x="70" y="142.0" text-anchor="end" class="muted">0.488778</text>
+<line x1="80" y1="206.0" x2="870" y2="206.0" class="grid"/>
+<text x="70" y="210.0" text-anchor="end" class="muted">0.366584</text>
+<line x1="80" y1="274.0" x2="870" y2="274.0" class="grid"/>
+<text x="70" y="278.0" text-anchor="end" class="muted">0.244389</text>
+<line x1="80" y1="342.0" x2="870" y2="342.0" class="grid"/>
+<text x="70" y="346.0" text-anchor="end" class="muted">0.122195</text>
+<line x1="80" y1="410.0" x2="870" y2="410.0" class="grid"/>
+<text x="70" y="414.0" text-anchor="end" class="muted">0</text>
+<line x1="80" y1="410.0" x2="870" y2="410.0" class="axis"/>
+<rect x="116.9" y="70.0" width="189.6" height="340.0" fill="#2166ac"/>
+<text transform="translate(211.7,450) rotate(-45)" text-anchor="end" class="muted">PC1</text>
+<rect x="380.2" y="299.5" width="189.6" height="110.5" fill="#d6604d"/>
+<text transform="translate(475.0,450) rotate(-45)" text-anchor="end" class="muted">PC2</text>
+<rect x="643.5" y="352.1" width="189.6" height="57.9" fill="#4393c3"/>
+<text transform="translate(738.3,450) rotate(-45)" text-anchor="end" class="muted">PC3</text>
+</svg>

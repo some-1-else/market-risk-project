@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="520" viewBox="0 0 900 520">
+<style>
+text{font-family:Arial,Helvetica,sans-serif;fill:#17202a} .muted{fill:#5d6d7e;font-size:12px}
+.title{font-size:20px;font-weight:700}.axis{stroke:#aeb6bf;stroke-width:1}.grid{stroke:#e5e8e8;stroke-width:1}
+</style>
+<rect width="100%" height="100%" fill="#ffffff"/>
+<text x="80" y="38" class="title">OFZ DCF pricing error, % of market price</text>
+<line x1="80" y1="70.0" x2="870" y2="70.0" class="grid"/>
+<text x="70" y="74.0" text-anchor="end" class="muted">4.144691</text>
+<line x1="80" y1="138.0" x2="870" y2="138.0" class="grid"/>
+<text x="70" y="142.0" text-anchor="end" class="muted">3.240082</text>
+<line x1="80" y1="206.0" x2="870" y2="206.0" class="grid"/>
+<text x="70" y="210.0" text-anchor="end" class="muted">2.335474</text>
+<line x1="80" y1="274.0" x2="870" y2="274.0" class="grid"/>
+<text x="70" y="278.0" text-anchor="end" class="muted">1.430865</text>
+<line x1="80" y1="342.0" x2="870" y2="342.0" class="grid"/>
+<text x="70" y="346.0" text-anchor="end" class="muted">0.526256</text>
+<line x1="80" y1="410.0" x2="870" y2="410.0" class="grid"/>
+<text x="70" y="414.0" text-anchor="end" class="muted">-0.378353</text>
+<line x1="80" y1="381.6" x2="870" y2="381.6" class="axis"/>
+<rect x="102.1" y="248.8" width="113.8" height="132.8" fill="#2166ac"/>
+<text transform="translate(159.0,450) rotate(-45)" text-anchor="end" class="muted">26219</text>
+<rect x="260.1" y="381.6" width="113.8" height="28.4" fill="#d6604d"/>
+<text transform="translate(317.0,450) rotate(-45)" text-anchor="end" class="muted">26236</text>
+<rect x="418.1" y="275.5" width="113.8" height="106.0" fill="#4393c3"/>
+<text transform="translate(475.0,450) rotate(-45)" text-anchor="end" class="muted">26218</text>
+<rect x="576.1" y="240.9" width="113.8" height="140.7" fill="#b2182b"/>
+<text transform="translate(633.0,450) rotate(-45)" text-anchor="end" class="muted">26221</text>
+<rect x="734.1" y="70.0" width="113.8" height="311.6" fill="#4d9221"/>
+<text transform="translate(791.0,450) rotate(-45)" text-anchor="end" class="muted">26233</text>
+</svg>
