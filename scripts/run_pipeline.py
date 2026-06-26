@@ -340,7 +340,9 @@ def main() -> None:
     for component in ["stocks", "bonds", "fx", "total"]:
         exc = backtest_details[f"{component}_exception"].to_numpy(dtype=bool)
         var = backtest_details[f"{component}_VaR99"].to_numpy(dtype=float)
-        dq = dq_test(exc, var, alpha=0.01, lags=4)
+        # 1 лаг: при ~1% пробоев на 260 днях (ожидание ~2-3) высокие порядки лагов
+        # переобучаются на единичные пробои и дают ложные отвержения.
+        dq = dq_test(exc, var, alpha=0.01, lags=1)
         dur = duration_test(exc, alpha=0.01)
         extra_rows.append({"component": component, "exceptions": int(exc.sum()), **dq, **dur})
     extra_tests = pd.DataFrame(extra_rows).set_index("component")
