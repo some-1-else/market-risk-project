@@ -19,6 +19,14 @@ from src.data import (
 )
 from src.dynamics import fit_garch11, select_distribution
 from src.risk_factors import adf_summary, build_model_factors, correlation_matrix, descriptive_stats
+from src.risk_metrics import dq_test, duration_test
+from src.stationarity import (
+    acf_returns_and_squared,
+    serial_dependence,
+    stationarity_levels_vs_changes,
+    trend_summary,
+    weekday_seasonality,
+)
 from src.risk_metrics import var_es
 from src.simulation import (
     fit_dynamics_model,
@@ -173,6 +181,33 @@ def main() -> None:
     save_table(stats, TABLES_DIR / "risk_factor_descriptive_stats.csv", TABLES_DIR / "risk_factor_descriptive_stats.md")
     adf = adf_summary(factors_all)
     save_table(adf, TABLES_DIR / "adf_stationarity.csv", TABLES_DIR / "adf_stationarity.md")
+
+    # Стационарность, тренд, сезонность (описательная статистика).
+    rate_levels = catalog.rates
+    price_levels = catalog.stocks + catalog.fx + catalog.aux_prices
+    stationarity = pd.concat([
+        stationarity_levels_vs_changes(market, rate_levels, log_return=False),
+        stationarity_levels_vs_changes(market, price_levels, log_return=True),
+    ])
+    save_table(stationarity, TABLES_DIR / "stationarity_analysis.csv", TABLES_DIR / "stationarity_analysis.md")
+
+    trend = trend_summary(market, rate_levels + catalog.stocks + catalog.fx)
+    save_table(trend, TABLES_DIR / "trend_summary.csv", TABLES_DIR / "trend_summary.md")
+
+    seasonality = weekday_seasonality(market, price_levels)
+    save_table(seasonality, TABLES_DIR / "seasonality_weekday.csv", TABLES_DIR / "seasonality_weekday.md")
+
+    arch = serial_dependence(market, price_levels)
+    save_table(arch, TABLES_DIR / "serial_dependence.csv", TABLES_DIR / "serial_dependence.md")
+
+    # Иллюстрация кластеризации волатильности: ACF доходностей vs квадратов доходностей.
+    acf_tab = acf_returns_and_squared(market["SBER"], nlags=20)
+    save_line_svg(
+        [str(i) for i in acf_tab.index],
+        {"ACF доходностей": acf_tab["acf_returns"], "ACF квадратов доходностей": acf_tab["acf_squared_returns"]},
+        FIGURES_DIR / "acf_returns_vs_squared_SBER.svg",
+        "SBER: ACF доходностей и квадратов доходностей (кластеризация волатильности)",
+    )
     corr = correlation_matrix(factors_all)
     save_table(corr, TABLES_DIR / "risk_factor_correlation.csv")
     save_heatmap_svg(corr, FIGURES_DIR / "risk_factor_correlation.svg", "Risk-factor correlation matrix")
@@ -298,6 +333,19 @@ def main() -> None:
     christoffersen = backtest_summary[["n00", "n01", "n10", "n11", "LR_ind", "p_ind", "LR_cc", "p_cc"]]
     save_table(kupiec, TABLES_DIR / "kupiec_test.csv", TABLES_DIR / "kupiec_test.md")
     save_table(christoffersen, TABLES_DIR / "christoffersen_test.csv", TABLES_DIR / "christoffersen_test.md")
+
+    # Дополнительные тесты из списка: Engle-Manganelli DQ (2004) и
+    # Christoffersen-Pelletier duration-based (2004).
+    extra_rows = []
+    for component in ["stocks", "bonds", "fx", "total"]:
+        exc = backtest_details[f"{component}_exception"].to_numpy(dtype=bool)
+        var = backtest_details[f"{component}_VaR99"].to_numpy(dtype=float)
+        dq = dq_test(exc, var, alpha=0.01, lags=4)
+        dur = duration_test(exc, alpha=0.01)
+        extra_rows.append({"component": component, "exceptions": int(exc.sum()), **dq, **dur})
+    extra_tests = pd.DataFrame(extra_rows).set_index("component")
+    save_table(extra_tests, TABLES_DIR / "backtesting_extra_tests.csv", TABLES_DIR / "backtesting_extra_tests.md")
+
     for component in ["stocks", "bonds", "fx", "total"]:
         labels = [d.strftime("%Y-%m-%d") for d in backtest_details["Date"]]
         save_line_svg(

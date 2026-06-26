@@ -50,6 +50,7 @@ market-risk-project/
 ├── src/
 │   ├── data.py
 │   ├── dynamics.py
+│   ├── stationarity.py
 │   ├── risk_factors.py
 │   ├── models.py
 │   ├── valuation.py
@@ -108,6 +109,20 @@ PCA:
 - PCA строится по дневным изменениям ставок;
 - используются первые 3 компоненты;
 - 3 компоненты объясняют около 91.36% дисперсии изменений кривой.
+
+Стационарность, тренд, сезонность:
+
+- стационарность проверяется двумя тестами — ADF и KPSS — отдельно для уровней и для
+  приращений/лог-доходностей (`stationarity_analysis.csv`). Все уровни оказываются I(1)
+  (нестационарны), а приращения/доходности — I(0); это и обосновывает выбор риск-факторов
+  как приращений/лог-доходностей, а не уровней;
+- тренд: линейный тренд уровней значим — ставки выросли за 2021-2025 (R^2 до 0.88),
+  `trend_summary.csv`;
+- сезонность: календарного эффекта по дням недели нет (тест Краскела-Уоллиса, p > 0.05),
+  `seasonality_weekday.csv`;
+- автокорреляция: доходности почти некоррелированы, а их квадраты сильно автокоррелированы
+  (`serial_dependence.csv`, рис. `acf_returns_vs_squared_SBER.svg`) — это кластеризация
+  волатильности, которая и обосновывает условную модель волатильности (EWMA) и тяжёлые хвосты.
 
 Модель динамики (стохастическая модель факторов):
 
@@ -196,6 +211,10 @@ Backtesting:
 - `reports/tables/portfolio_composition.csv`
 - `reports/tables/risk_factor_inventory.csv`
 - `reports/tables/risk_factor_descriptive_stats.csv`
+- `reports/tables/stationarity_analysis.csv` — ADF+KPSS, уровни vs приращения;
+- `reports/tables/trend_summary.csv` — линейный тренд уровней;
+- `reports/tables/seasonality_weekday.csv` — сезонность по дням недели;
+- `reports/tables/serial_dependence.csv` — Льюнг-Бокс, кластеризация волатильности;
 - `reports/tables/distribution_selection.csv` — выбор Normal vs Student-t по MLE/AIC;
 - `reports/tables/garch_estimates.csv` — GARCH(1,1)-t параметры по MLE;
 - `reports/tables/dynamics_diagnostics.csv` — условная vs безусловная волатильность, dof;
@@ -216,6 +235,7 @@ Backtesting:
 - `reports/figures/risk_factor_correlation.svg`
 - `reports/figures/pca_explained_variance.svg`
 - `reports/figures/pca_components.svg`
+- `reports/figures/acf_returns_vs_squared_SBER.svg`
 - `reports/figures/pnl_distribution_total_h1.svg`
 - `reports/figures/pnl_distribution_total_h10.svg`
 - `reports/figures/backtest_total_breaches.svg`
