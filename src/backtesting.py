@@ -4,7 +4,12 @@ import numpy as np
 import pandas as pd
 
 from .risk_metrics import christoffersen_test, kupiec_test, var_es
-from .simulation import fit_normal_model, simulate_portfolio_pnl
+from .simulation import (
+    fit_dynamics_model,
+    fit_normal_model,
+    simulate_portfolio_pnl,
+    simulate_portfolio_pnl_cond,
+)
 from .valuation import actual_pnl, build_positions
 
 
@@ -19,7 +24,14 @@ def run_backtest(
     n_scenarios: int = 3_000,
     seed: int = 2025,
     min_history: int = 250,
+    model_kind: str = "cond",
 ) -> tuple[pd.DataFrame, pd.DataFrame]:
+    """Ежедневный backtest 1-day VaR 99% за указанный год.
+
+    model_kind: 'cond' — улучшенная модель (EWMA условная волатильность + многомерное
+    t-Стьюдента); 'normal' — baseline (безусловная многомерная нормаль).
+    Модель переоценивается заново на каждый торговый день только по прошлым данным.
+    """
     dates = market["Date"].tolist()
     rows = []
     for i, as_of in enumerate(dates[:-1]):
@@ -27,8 +39,12 @@ def run_backtest(
             continue
         next_row = market.iloc[i + 1]
         base_row = market.iloc[i]
-        model = fit_normal_model(market, as_of, stock_columns, fx_columns, rate_columns, bond_columns)
-        pnl_sim, _ = simulate_portfolio_pnl(model, market, ofz, as_of, horizon_days=1, n_scenarios=n_scenarios, seed=seed + i)
+        if model_kind == "cond":
+            model = fit_dynamics_model(market, as_of, stock_columns, fx_columns, rate_columns, bond_columns)
+            pnl_sim, _ = simulate_portfolio_pnl_cond(model, market, ofz, as_of, horizon_days=1, n_scenarios=n_scenarios, seed=seed + i)
+        else:
+            model = fit_normal_model(market, as_of, stock_columns, fx_columns, rate_columns, bond_columns)
+            pnl_sim, _ = simulate_portfolio_pnl(model, market, ofz, as_of, horizon_days=1, n_scenarios=n_scenarios, seed=seed + i)
         positions = build_positions(base_row, stock_columns, fx_columns, bond_columns)
         realized = actual_pnl(next_row, base_row, positions, stock_columns, fx_columns, bond_columns)
         row = {"Date": as_of, "next_date": next_row["Date"]}

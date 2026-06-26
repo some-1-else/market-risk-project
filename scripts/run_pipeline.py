@@ -9,10 +9,23 @@ sys.path.insert(0, str(ROOT))
 import pandas as pd
 
 from src.backtesting import run_backtest
-from src.data import classify_columns, load_market_data, load_ofz_cashflows, previous_trading_date, save_processed
+from src.data import (
+    classify_columns,
+    load_market_data,
+    load_ofz_cashflows,
+    previous_trading_date,
+    repair_price_spikes,
+    save_processed,
+)
+from src.dynamics import fit_garch11, select_distribution
 from src.risk_factors import adf_summary, build_model_factors, correlation_matrix, descriptive_stats
 from src.risk_metrics import var_es
-from src.simulation import fit_normal_model, simulate_portfolio_pnl
+from src.simulation import (
+    fit_dynamics_model,
+    fit_normal_model,
+    simulate_portfolio_pnl,
+    simulate_portfolio_pnl_cond,
+)
 from src.utils import (
     FIGURES_DIR,
     OUTPUTS_DIR,
@@ -85,13 +98,47 @@ def make_portfolio_composition(market: pd.DataFrame, as_of: pd.Timestamp, catalo
 
 def make_limitations_table() -> pd.DataFrame:
     rows = [
-        ("Нормальное распределение", "Не описывает тяжелые хвосты и скачки", "Показать kurtosis/quantiles; улучшение - Student-t или EVT"),
+        ("Условная волатильность EWMA", "lambda=0.94 фиксирован (RiskMetrics), а не оценивается; реакция на смену режима с лагом", "Оценивать lambda по MLE или перейти к полноценному GARCH(1,1)"),
+        ("Многомерное t-Стьюдента", "Один общий параметр степеней свободы на все факторы; хвостовая зависимость симметрична", "Перейти к копулам (t-копула по факторам, разные dof) или EVT для хвостов"),
         ("Процентная кривая", "PCA строится по историческим изменениям ставок и не моделирует отдельные спреды ОФЗ", "Добавить спредовые факторы по выпускам"),
         ("ОФЗ DCF", "Нет полноценного clean/dirty price, НКД, bid/ask и календарей купонов вне данных", "Использовать полные bond analytics и day-count conventions"),
-        ("Backtesting", "Сравнивает модельный VaR с фактическим P&L следующего торгового дня; малая частота 1% дает мало пробоев", "Добавить горизонты/уровни confidence и rolling-window варианты"),
+        ("Горизонт 10 дней", "Считается суммой 10 i.i.d. дневных инноваций при замороженной условной sigma; игнорируется возврат волатильности к среднему", "Симулировать траекторию условной волатильности на горизонте"),
+        ("Backtesting", "Один год = 260 наблюдений; для 1% VaR ожидается ~2-3 пробоя, мощность тестов ограничена", "Расширить период/уровни confidence и добавить duration-тесты"),
         ("Ликвидность и транзакционные издержки", "Не учитываются", "Добавить liquidity add-on"),
     ]
     return pd.DataFrame(rows, columns=["limitation", "impact", "defense_comment"]).set_index("limitation")
+
+
+def make_distribution_selection(factors: pd.DataFrame) -> pd.DataFrame:
+    """Сравнение Normal vs Student-t (MLE) по каждому риск-фактору."""
+    rows = []
+    for col in factors.columns:
+        if col == "Date":
+            continue
+        sel = select_distribution(factors[col].to_numpy())
+        rows.append({"factor": col, **sel})
+    return pd.DataFrame(rows).set_index("factor")
+
+
+def make_garch_estimates(factors: pd.DataFrame, columns: list[str]) -> pd.DataFrame:
+    """GARCH(1,1)-t оценки методом максимального правдоподобия для ключевых факторов."""
+    rows = []
+    for col in columns:
+        if col not in factors.columns:
+            continue
+        g = fit_garch11(factors[col].to_numpy(), dist="t")
+        rows.append({
+            "factor": col,
+            "omega": g.omega,
+            "alpha": g.alpha,
+            "beta": g.beta,
+            "persistence_alpha_plus_beta": g.persistence,
+            "nu_innovations": g.nu,
+            "loglik": g.loglik,
+            "aic": g.aic,
+            "converged": g.converged,
+        })
+    return pd.DataFrame(rows).set_index("factor")
 
 
 def main() -> None:
@@ -99,6 +146,15 @@ def main() -> None:
     market = load_market_data(ROOT / "df_final.csv")
     ofz = load_ofz_cashflows(ROOT / "ofz_final.csv")
     catalog = classify_columns(market)
+
+    # Чистка очевидных одиночных выбросов в ценовых рядах (например, ошибочный
+    # курс USD=5.00 на 2023-03-16). Отчёт о заменах сохраняется для прозрачности.
+    repair_cols = catalog.fx + catalog.stocks + catalog.bond_prices + catalog.aux_prices
+    market, repair_report = repair_price_spikes(market, repair_cols)
+    if repair_report.empty:
+        repair_report = pd.DataFrame(columns=["column", "date", "old_value", "prev_value", "next_value", "repaired_value"])
+    save_table(repair_report.set_index("column") if not repair_report.empty else repair_report,
+               TABLES_DIR / "data_repair_report.csv", TABLES_DIR / "data_repair_report.md")
     save_processed(market, ofz, PROCESSED_DIR)
 
     data_profile = pd.DataFrame({
@@ -136,6 +192,13 @@ def main() -> None:
         if factor in factors_all.columns:
             save_hist_svg(factors_all[factor], FIGURES_DIR / f"distribution_{factor}.svg", f"Distribution: {factor}")
 
+    # Выбор стохастической модели динамики (п.3): сравнение Normal vs Student-t по MLE
+    # для каждого фактора и оценка GARCH(1,1)-t по правдоподобию для ключевых факторов.
+    distribution_selection = make_distribution_selection(factors_all)
+    save_table(distribution_selection, TABLES_DIR / "distribution_selection.csv", TABLES_DIR / "distribution_selection.md")
+    garch_estimates = make_garch_estimates(factors_all, ["Курс_USD", "Курс_EUR", "SBER", "PC1", "PC2", "PC3"])
+    save_table(garch_estimates, TABLES_DIR / "garch_estimates.csv", TABLES_DIR / "garch_estimates.md")
+
     risk_anchor = previous_trading_date(market, RISK_DATE)
     portfolio = make_portfolio_composition(market, risk_anchor, catalog)
     save_table(portfolio, TABLES_DIR / "portfolio_composition.csv", TABLES_DIR / "portfolio_composition.md")
@@ -162,7 +225,16 @@ def main() -> None:
         "Yield-curve dynamics",
     )
 
-    model = fit_normal_model(market, risk_anchor, catalog.stocks, catalog.fx, catalog.rates, catalog.bond_prices)
+    # Основная модель оценки риска: условная волатильность EWMA + многомерное t-Стьюдента.
+    # Baseline (безусловная нормаль) считаем рядом — для сравнительной таблицы.
+    model = fit_dynamics_model(market, risk_anchor, catalog.stocks, catalog.fx, catalog.rates, catalog.bond_prices,
+                               vol_method="ewma", innovation="t")
+    baseline = fit_normal_model(market, risk_anchor, catalog.stocks, catalog.fx, catalog.rates, catalog.bond_prices)
+
+    dyn_diag = model.diagnostics.copy()
+    dyn_diag["mvt_dof"] = model.nu
+    save_table(dyn_diag, TABLES_DIR / "dynamics_diagnostics.csv", TABLES_DIR / "dynamics_diagnostics.md")
+
     pricing_errors = bond_pricing_errors(market, ofz, risk_anchor, catalog.rates, catalog.bond_prices)
     save_table(pricing_errors, TABLES_DIR / "bond_pricing_errors.csv", TABLES_DIR / "bond_pricing_errors.md")
     save_bar_svg(
@@ -173,11 +245,14 @@ def main() -> None:
     )
 
     metric_rows = []
+    comparison_rows = []
     for horizon in [1, 10]:
-        pnl, base_values = simulate_portfolio_pnl(model, market, ofz, risk_anchor, horizon_days=horizon, n_scenarios=FINAL_SCENARIOS, seed=SEED)
+        pnl, base_values = simulate_portfolio_pnl_cond(model, market, ofz, risk_anchor, horizon_days=horizon, n_scenarios=FINAL_SCENARIOS, seed=SEED)
+        pnl_base, _ = simulate_portfolio_pnl(baseline, market, ofz, risk_anchor, horizon_days=horizon, n_scenarios=FINAL_SCENARIOS, seed=SEED)
         pnl.to_csv(OUTPUTS_DIR / f"mc_pnl_h{horizon}.csv", index=False)
         for component in ["stocks", "bonds", "fx", "total"]:
             metrics = var_es(pnl[component].to_numpy(), var_level=0.99, es_level=0.975)
+            metrics_base = var_es(pnl_base[component].to_numpy(), var_level=0.99, es_level=0.975)
             metric_rows.append({
                 "risk_date": RISK_DATE,
                 "anchor_date": risk_anchor.date(),
@@ -188,13 +263,22 @@ def main() -> None:
                 "mean_pnl_RUB": pnl[component].mean(),
                 "std_pnl_RUB": pnl[component].std(ddof=1),
                 "scenarios": FINAL_SCENARIOS,
-                "model": "multivariate normal log-return/PCA baseline",
+                "model": f"EWMA cond. vol + multivariate Student-t (dof={model.nu:.0f})",
+            })
+            comparison_rows.append({
+                "horizon_days": horizon,
+                "component": component,
+                "VaR_baseline_normal": metrics_base["VaR_99"],
+                "VaR_ewma_student_t": metrics["VaR_99"],
+                "ratio_new_over_baseline": metrics["VaR_99"] / metrics_base["VaR_99"] if metrics_base["VaR_99"] else float("nan"),
             })
             save_hist_svg(pnl[component], FIGURES_DIR / f"pnl_distribution_{component}_h{horizon}.svg", f"P&L distribution: {component}, {horizon}d")
         pd.Series(base_values).to_csv(OUTPUTS_DIR / f"portfolio_base_values_h{horizon}.csv")
     risk_metrics = pd.DataFrame(metric_rows).set_index(["horizon_days", "component"])
     save_table(risk_metrics, OUTPUTS_DIR / "risk_metrics_var_es.csv", OUTPUTS_DIR / "risk_metrics_var_es.md")
     save_table(risk_metrics, TABLES_DIR / "var_es_summary.csv", TABLES_DIR / "var_es_summary.md")
+    model_comparison = pd.DataFrame(comparison_rows).set_index(["horizon_days", "component"])
+    save_table(model_comparison, TABLES_DIR / "model_comparison_var.csv", TABLES_DIR / "model_comparison_var.md")
 
     backtest_details, backtest_summary = run_backtest(
         market,

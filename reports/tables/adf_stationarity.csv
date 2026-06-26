@@ -1,19 +1,19 @@
 factor,adf_stat,p_value,note
-SBER,,,statsmodels unavailable in current runtime
-GAZP,,,statsmodels unavailable in current runtime
-LKOH,,,statsmodels unavailable in current runtime
-ROSN,,,statsmodels unavailable in current runtime
-TATN,,,statsmodels unavailable in current runtime
-GMKN,,,statsmodels unavailable in current runtime
-CHMF,,,statsmodels unavailable in current runtime
-NLMK,,,statsmodels unavailable in current runtime
-NVTK,,,statsmodels unavailable in current runtime
-MTSS,,,statsmodels unavailable in current runtime
-Курс_USD,,,statsmodels unavailable in current runtime
-Курс_EUR,,,statsmodels unavailable in current runtime
-IMOEX_CLOSE,,,statsmodels unavailable in current runtime
-RTSI_CLOSE,,,statsmodels unavailable in current runtime
-Нефть_Brent,,,statsmodels unavailable in current runtime
-PC1,,,statsmodels unavailable in current runtime
-PC2,,,statsmodels unavailable in current runtime
-PC3,,,statsmodels unavailable in current runtime
+SBER,-18.371974140496793,2.2173241964992823e-30,
+GAZP,-35.67874185402395,0.0,
+LKOH,-36.46074135892665,0.0,
+ROSN,-18.067985312395102,2.609401197454825e-30,
+TATN,-8.177242796990006,8.31329849961218e-13,
+GMKN,-36.75444701426876,0.0,
+CHMF,-19.84212369450152,0.0,
+NLMK,-19.524141980648476,0.0,
+NVTK,-14.688379614124631,3.0772063416064407e-27,
+MTSS,-26.388897515152134,0.0,
+Курс_USD,-9.488547227979907,3.7058303841359736e-16,
+Курс_EUR,-8.713305171102954,3.5429714423132874e-14,
+IMOEX_CLOSE,-20.40332664532905,0.0,
+RTSI_CLOSE,-6.836340977362765,1.8384269020697365e-09,
+Нефть_Brent,-11.910478700557908,5.311238140387713e-22,
+PC1,-7.457362114726461,5.46750312715414e-11,
+PC2,-34.29313323843768,0.0,
+PC3,-19.10267728757094,0.0,

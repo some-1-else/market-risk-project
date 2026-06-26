@@ -4,6 +4,7 @@ import re
 from dataclasses import dataclass
 from pathlib import Path
 
+import numpy as np
 import pandas as pd
 
 
@@ -58,6 +59,52 @@ def load_ofz_cashflows(path: Path) -> pd.DataFrame:
     df["code"] = df["Полное наименование ЦБ"].str.extract(r"(\d{5})", expand=False)
     df = df.rename(columns={"Дата": "payment_date", "Размер выплаты": "payment_amount"})
     return df.sort_values(["code", "payment_date"]).reset_index(drop=True)
+
+
+def repair_price_spikes(
+    df: pd.DataFrame,
+    columns: list[str],
+    up: float = 1.5,
+    down: float = 0.667,
+) -> tuple[pd.DataFrame, pd.DataFrame]:
+    """Починить очевидные одиночные выбросы-«иглы» в ценовых рядах.
+
+    Критерий ошибки: значение в один день одновременно резко отклоняется и от
+    предыдущего, и от следующего наблюдения (отношение к обоим соседям > ``up``
+    либо < ``down``) — то есть это изолированный всплеск, который сразу же
+    возвращается обратно. Такие точки заменяются лог-линейной интерполяцией
+    соседних значений (геометрическое среднее).
+
+    Это НЕ трогает устойчивые движения (например, реальный обвал рубля в
+    марте 2022 г.), потому что там соседние дни тоже находятся на высоком уровне.
+    Возвращает (исправленный df, отчёт о заменах).
+    """
+    df = df.copy()
+    reports = []
+    for col in columns:
+        if col not in df.columns:
+            continue
+        s = df[col]
+        prev = s.shift(1)
+        nxt = s.shift(-1)
+        rp = s / prev
+        rn = s / nxt
+        spike = ((rp > up) & (rn > up)) | ((rp < down) & (rn < down))
+        spike = spike.fillna(False)
+        for i in df.index[spike]:
+            old = float(s.iloc[i])
+            new = float(np.sqrt(prev.iloc[i] * nxt.iloc[i]))
+            reports.append({
+                "column": col,
+                "date": df["Date"].iloc[i].date(),
+                "old_value": old,
+                "prev_value": float(prev.iloc[i]),
+                "next_value": float(nxt.iloc[i]),
+                "repaired_value": new,
+            })
+            df.loc[i, col] = new
+    report = pd.DataFrame(reports)
+    return df, report
 
 
 def classify_columns(df: pd.DataFrame) -> DataCatalog:

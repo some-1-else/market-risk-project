@@ -6,116 +6,116 @@ text{font-family:Arial,Helvetica,sans-serif;fill:#17202a} .muted{fill:#5d6d7e;fo
 <rect width="100%" height="100%" fill="#ffffff"/>
 <text x="80" y="38" class="title">P&L distribution: bonds, 10d</text>
 <line x1="80" y1="70.0" x2="870" y2="70.0" class="grid"/>
-<text x="70" y="74.0" text-anchor="end" class="muted">590.00</text>
+<text x="70" y="74.0" text-anchor="end" class="muted">963.00</text>
 <line x1="80" y1="138.0" x2="870" y2="138.0" class="grid"/>
-<text x="70" y="142.0" text-anchor="end" class="muted">472.00</text>
+<text x="70" y="142.0" text-anchor="end" class="muted">770.40</text>
 <line x1="80" y1="206.0" x2="870" y2="206.0" class="grid"/>
-<text x="70" y="210.0" text-anchor="end" class="muted">354.00</text>
+<text x="70" y="210.0" text-anchor="end" class="muted">577.80</text>
 <line x1="80" y1="274.0" x2="870" y2="274.0" class="grid"/>
-<text x="70" y="278.0" text-anchor="end" class="muted">236.00</text>
+<text x="70" y="278.0" text-anchor="end" class="muted">385.20</text>
 <line x1="80" y1="342.0" x2="870" y2="342.0" class="grid"/>
-<text x="70" y="346.0" text-anchor="end" class="muted">118.00</text>
+<text x="70" y="346.0" text-anchor="end" class="muted">192.60</text>
 <line x1="80" y1="410.0" x2="870" y2="410.0" class="grid"/>
 <text x="70" y="414.0" text-anchor="end" class="muted">0</text>
 <line x1="80" y1="410.0" x2="870" y2="410.0" class="axis"/>
-<rect x="82.2" y="409.4" width="11.4" height="1.0" fill="#2166ac"/>
-<text transform="translate(87.9,450) rotate(-45)" text-anchor="end" class="muted">-3 407 042</text>
-<rect x="98.0" y="409.4" width="11.4" height="1.0" fill="#d6604d"/>
-<text transform="translate(103.7,450) rotate(-45)" text-anchor="end" class="muted">-3 273 838</text>
+<rect x="82.2" y="409.3" width="11.4" height="1.0" fill="#2166ac"/>
+<text transform="translate(87.9,450) rotate(-45)" text-anchor="end" class="muted">-3 538 768</text>
+<rect x="98.0" y="410.0" width="11.4" height="1.0" fill="#d6604d"/>
+<text transform="translate(103.7,450) rotate(-45)" text-anchor="end" class="muted">-3 409 299</text>
 <rect x="113.8" y="410.0" width="11.4" height="1.0" fill="#4393c3"/>
-<text transform="translate(119.5,450) rotate(-45)" text-anchor="end" class="muted">-3 140 634</text>
-<rect x="129.6" y="409.4" width="11.4" height="1.0" fill="#b2182b"/>
-<text transform="translate(135.3,450) rotate(-45)" text-anchor="end" class="muted">-3 007 429</text>
-<rect x="145.4" y="408.3" width="11.4" height="1.7" fill="#4d9221"/>
-<text transform="translate(151.1,450) rotate(-45)" text-anchor="end" class="muted">-2 874 225</text>
-<rect x="161.2" y="406.0" width="11.4" height="4.0" fill="#9970ab"/>
-<text transform="translate(166.9,450) rotate(-45)" text-anchor="end" class="muted">-2 741 020</text>
-<rect x="177.0" y="401.9" width="11.4" height="8.1" fill="#f4a582"/>
-<text transform="translate(182.7,450) rotate(-45)" text-anchor="end" class="muted">-2 607 816</text>
-<rect x="192.8" y="397.9" width="11.4" height="12.1" fill="#92c5de"/>
-<text transform="translate(198.5,450) rotate(-45)" text-anchor="end" class="muted">-2 474 612</text>
-<rect x="208.6" y="396.7" width="11.4" height="13.3" fill="#2166ac"/>
-<text transform="translate(214.3,450) rotate(-45)" text-anchor="end" class="muted">-2 341 407</text>
-<rect x="224.4" y="392.1" width="11.4" height="17.9" fill="#d6604d"/>
-<text transform="translate(230.1,450) rotate(-45)" text-anchor="end" class="muted">-2 208 203</text>
-<rect x="240.2" y="366.8" width="11.4" height="43.2" fill="#4393c3"/>
-<text transform="translate(245.9,450) rotate(-45)" text-anchor="end" class="muted">-2 074 998</text>
-<rect x="256.0" y="361.6" width="11.4" height="48.4" fill="#b2182b"/>
-<text transform="translate(261.7,450) rotate(-45)" text-anchor="end" class="muted">-1 941 794</text>
-<rect x="271.8" y="345.5" width="11.4" height="64.5" fill="#4d9221"/>
-<text transform="translate(277.5,450) rotate(-45)" text-anchor="end" class="muted">-1 808 590</text>
-<rect x="287.6" y="324.7" width="11.4" height="85.3" fill="#9970ab"/>
-<text transform="translate(293.3,450) rotate(-45)" text-anchor="end" class="muted">-1 675 385</text>
-<rect x="303.4" y="298.8" width="11.4" height="111.2" fill="#f4a582"/>
-<text transform="translate(309.1,450) rotate(-45)" text-anchor="end" class="muted">-1 542 181</text>
-<rect x="319.2" y="279.8" width="11.4" height="130.2" fill="#92c5de"/>
-<text transform="translate(324.9,450) rotate(-45)" text-anchor="end" class="muted">-1 408 976</text>
-<rect x="335.0" y="246.3" width="11.4" height="163.7" fill="#2166ac"/>
-<text transform="translate(340.7,450) rotate(-45)" text-anchor="end" class="muted">-1 275 772</text>
-<rect x="350.8" y="208.3" width="11.4" height="201.7" fill="#d6604d"/>
-<text transform="translate(356.5,450) rotate(-45)" text-anchor="end" class="muted">-1 142 568</text>
-<rect x="366.6" y="155.3" width="11.4" height="254.7" fill="#4393c3"/>
-<text transform="translate(372.3,450) rotate(-45)" text-anchor="end" class="muted">-1 009 363</text>
-<rect x="382.4" y="154.1" width="11.4" height="255.9" fill="#b2182b"/>
-<text transform="translate(388.1,450) rotate(-45)" text-anchor="end" class="muted">-876 158.79</text>
-<rect x="398.2" y="121.3" width="11.4" height="288.7" fill="#4d9221"/>
-<text transform="translate(403.9,450) rotate(-45)" text-anchor="end" class="muted">-742 954.39</text>
-<rect x="414.0" y="128.8" width="11.4" height="281.2" fill="#9970ab"/>
-<text transform="translate(419.7,450) rotate(-45)" text-anchor="end" class="muted">-609 749.98</text>
-<rect x="429.8" y="86.7" width="11.4" height="323.3" fill="#f4a582"/>
-<text transform="translate(435.5,450) rotate(-45)" text-anchor="end" class="muted">-476 545.58</text>
-<rect x="445.6" y="81.5" width="11.4" height="328.5" fill="#92c5de"/>
-<text transform="translate(451.3,450) rotate(-45)" text-anchor="end" class="muted">-343 341.18</text>
-<rect x="461.4" y="70.0" width="11.4" height="340.0" fill="#2166ac"/>
-<text transform="translate(467.1,450) rotate(-45)" text-anchor="end" class="muted">-210 136.78</text>
-<rect x="477.2" y="85.0" width="11.4" height="325.0" fill="#d6604d"/>
-<text transform="translate(482.9,450) rotate(-45)" text-anchor="end" class="muted">-76 932.37</text>
-<rect x="493.0" y="72.9" width="11.4" height="337.1" fill="#4393c3"/>
-<text transform="translate(498.7,450) rotate(-45)" text-anchor="end" class="muted">56 272.03</text>
-<rect x="508.8" y="84.4" width="11.4" height="325.6" fill="#b2182b"/>
-<text transform="translate(514.5,450) rotate(-45)" text-anchor="end" class="muted">189 476.43</text>
-<rect x="524.6" y="119.6" width="11.4" height="290.4" fill="#4d9221"/>
-<text transform="translate(530.3,450) rotate(-45)" text-anchor="end" class="muted">322 680.84</text>
-<rect x="540.4" y="154.1" width="11.4" height="255.9" fill="#9970ab"/>
-<text transform="translate(546.1,450) rotate(-45)" text-anchor="end" class="muted">455 885.24</text>
-<rect x="556.2" y="170.8" width="11.4" height="239.2" fill="#f4a582"/>
-<text transform="translate(561.9,450) rotate(-45)" text-anchor="end" class="muted">589 089.64</text>
-<rect x="572.0" y="193.9" width="11.4" height="216.1" fill="#92c5de"/>
-<text transform="translate(577.7,450) rotate(-45)" text-anchor="end" class="muted">722 294.04</text>
-<rect x="587.8" y="243.5" width="11.4" height="166.5" fill="#2166ac"/>
-<text transform="translate(593.5,450) rotate(-45)" text-anchor="end" class="muted">855 498.45</text>
-<rect x="603.6" y="268.8" width="11.4" height="141.2" fill="#d6604d"/>
-<text transform="translate(609.3,450) rotate(-45)" text-anchor="end" class="muted">988 702.85</text>
-<rect x="619.4" y="287.3" width="11.4" height="122.7" fill="#4393c3"/>
-<text transform="translate(625.1,450) rotate(-45)" text-anchor="end" class="muted">1 121 907</text>
-<rect x="635.2" y="323.0" width="11.4" height="87.0" fill="#b2182b"/>
-<text transform="translate(640.9,450) rotate(-45)" text-anchor="end" class="muted">1 255 112</text>
-<rect x="651.0" y="340.3" width="11.4" height="69.7" fill="#4d9221"/>
-<text transform="translate(656.7,450) rotate(-45)" text-anchor="end" class="muted">1 388 316</text>
-<rect x="666.8" y="354.7" width="11.4" height="55.3" fill="#9970ab"/>
-<text transform="translate(672.5,450) rotate(-45)" text-anchor="end" class="muted">1 521 520</text>
-<rect x="682.6" y="360.4" width="11.4" height="49.6" fill="#f4a582"/>
-<text transform="translate(688.3,450) rotate(-45)" text-anchor="end" class="muted">1 654 725</text>
-<rect x="698.4" y="382.3" width="11.4" height="27.7" fill="#92c5de"/>
-<text transform="translate(704.1,450) rotate(-45)" text-anchor="end" class="muted">1 787 929</text>
-<rect x="714.2" y="388.1" width="11.4" height="21.9" fill="#2166ac"/>
-<text transform="translate(719.9,450) rotate(-45)" text-anchor="end" class="muted">1 921 134</text>
-<rect x="730.0" y="392.1" width="11.4" height="17.9" fill="#d6604d"/>
-<text transform="translate(735.7,450) rotate(-45)" text-anchor="end" class="muted">2 054 338</text>
-<rect x="745.8" y="401.9" width="11.4" height="8.1" fill="#4393c3"/>
-<text transform="translate(751.5,450) rotate(-45)" text-anchor="end" class="muted">2 187 542</text>
-<rect x="761.6" y="398.5" width="11.4" height="11.5" fill="#b2182b"/>
-<text transform="translate(767.3,450) rotate(-45)" text-anchor="end" class="muted">2 320 747</text>
-<rect x="777.4" y="403.1" width="11.4" height="6.9" fill="#4d9221"/>
-<text transform="translate(783.1,450) rotate(-45)" text-anchor="end" class="muted">2 453 951</text>
-<rect x="793.2" y="408.3" width="11.4" height="1.7" fill="#9970ab"/>
-<text transform="translate(798.9,450) rotate(-45)" text-anchor="end" class="muted">2 587 156</text>
-<rect x="809.0" y="407.7" width="11.4" height="2.3" fill="#f4a582"/>
-<text transform="translate(814.7,450) rotate(-45)" text-anchor="end" class="muted">2 720 360</text>
-<rect x="824.8" y="408.8" width="11.4" height="1.2" fill="#92c5de"/>
-<text transform="translate(830.5,450) rotate(-45)" text-anchor="end" class="muted">2 853 564</text>
-<rect x="840.6" y="408.8" width="11.4" height="1.2" fill="#2166ac"/>
-<text transform="translate(846.3,450) rotate(-45)" text-anchor="end" class="muted">2 986 769</text>
-<rect x="856.4" y="408.3" width="11.4" height="1.7" fill="#d6604d"/>
-<text transform="translate(862.1,450) rotate(-45)" text-anchor="end" class="muted">3 119 973</text>
+<text transform="translate(119.5,450) rotate(-45)" text-anchor="end" class="muted">-3 279 831</text>
+<rect x="129.6" y="410.0" width="11.4" height="1.0" fill="#b2182b"/>
+<text transform="translate(135.3,450) rotate(-45)" text-anchor="end" class="muted">-3 150 363</text>
+<rect x="145.4" y="410.0" width="11.4" height="1.0" fill="#4d9221"/>
+<text transform="translate(151.1,450) rotate(-45)" text-anchor="end" class="muted">-3 020 895</text>
+<rect x="161.2" y="410.0" width="11.4" height="1.0" fill="#9970ab"/>
+<text transform="translate(166.9,450) rotate(-45)" text-anchor="end" class="muted">-2 891 426</text>
+<rect x="177.0" y="410.0" width="11.4" height="1.0" fill="#f4a582"/>
+<text transform="translate(182.7,450) rotate(-45)" text-anchor="end" class="muted">-2 761 958</text>
+<rect x="192.8" y="410.0" width="11.4" height="1.0" fill="#92c5de"/>
+<text transform="translate(198.5,450) rotate(-45)" text-anchor="end" class="muted">-2 632 490</text>
+<rect x="208.6" y="410.0" width="11.4" height="1.0" fill="#2166ac"/>
+<text transform="translate(214.3,450) rotate(-45)" text-anchor="end" class="muted">-2 503 022</text>
+<rect x="224.4" y="409.6" width="11.4" height="1.0" fill="#d6604d"/>
+<text transform="translate(230.1,450) rotate(-45)" text-anchor="end" class="muted">-2 373 554</text>
+<rect x="240.2" y="408.9" width="11.4" height="1.1" fill="#4393c3"/>
+<text transform="translate(245.9,450) rotate(-45)" text-anchor="end" class="muted">-2 244 085</text>
+<rect x="256.0" y="408.9" width="11.4" height="1.1" fill="#b2182b"/>
+<text transform="translate(261.7,450) rotate(-45)" text-anchor="end" class="muted">-2 114 617</text>
+<rect x="271.8" y="407.9" width="11.4" height="2.1" fill="#4d9221"/>
+<text transform="translate(277.5,450) rotate(-45)" text-anchor="end" class="muted">-1 985 149</text>
+<rect x="287.6" y="405.8" width="11.4" height="4.2" fill="#9970ab"/>
+<text transform="translate(293.3,450) rotate(-45)" text-anchor="end" class="muted">-1 855 681</text>
+<rect x="303.4" y="402.2" width="11.4" height="7.8" fill="#f4a582"/>
+<text transform="translate(309.1,450) rotate(-45)" text-anchor="end" class="muted">-1 726 212</text>
+<rect x="319.2" y="396.9" width="11.4" height="13.1" fill="#92c5de"/>
+<text transform="translate(324.9,450) rotate(-45)" text-anchor="end" class="muted">-1 596 744</text>
+<rect x="335.0" y="391.3" width="11.4" height="18.7" fill="#2166ac"/>
+<text transform="translate(340.7,450) rotate(-45)" text-anchor="end" class="muted">-1 467 276</text>
+<rect x="350.8" y="370.5" width="11.4" height="39.5" fill="#d6604d"/>
+<text transform="translate(356.5,450) rotate(-45)" text-anchor="end" class="muted">-1 337 808</text>
+<rect x="366.6" y="355.3" width="11.4" height="54.7" fill="#4393c3"/>
+<text transform="translate(372.3,450) rotate(-45)" text-anchor="end" class="muted">-1 208 340</text>
+<rect x="382.4" y="320.3" width="11.4" height="89.7" fill="#b2182b"/>
+<text transform="translate(388.1,450) rotate(-45)" text-anchor="end" class="muted">-1 078 871</text>
+<rect x="398.2" y="301.6" width="11.4" height="108.4" fill="#4d9221"/>
+<text transform="translate(403.9,450) rotate(-45)" text-anchor="end" class="muted">-949 403.17</text>
+<rect x="414.0" y="240.5" width="11.4" height="169.5" fill="#9970ab"/>
+<text transform="translate(419.7,450) rotate(-45)" text-anchor="end" class="muted">-819 934.95</text>
+<rect x="429.8" y="189.7" width="11.4" height="220.3" fill="#f4a582"/>
+<text transform="translate(435.5,450) rotate(-45)" text-anchor="end" class="muted">-690 466.74</text>
+<rect x="445.6" y="150.1" width="11.4" height="259.9" fill="#92c5de"/>
+<text transform="translate(451.3,450) rotate(-45)" text-anchor="end" class="muted">-560 998.52</text>
+<rect x="461.4" y="118.4" width="11.4" height="291.6" fill="#2166ac"/>
+<text transform="translate(467.1,450) rotate(-45)" text-anchor="end" class="muted">-431 530.30</text>
+<rect x="477.2" y="81.7" width="11.4" height="328.3" fill="#d6604d"/>
+<text transform="translate(482.9,450) rotate(-45)" text-anchor="end" class="muted">-302 062.08</text>
+<rect x="493.0" y="70.0" width="11.4" height="340.0" fill="#4393c3"/>
+<text transform="translate(498.7,450) rotate(-45)" text-anchor="end" class="muted">-172 593.86</text>
+<rect x="508.8" y="73.9" width="11.4" height="336.1" fill="#b2182b"/>
+<text transform="translate(514.5,450) rotate(-45)" text-anchor="end" class="muted">-43 125.64</text>
+<rect x="524.6" y="118.0" width="11.4" height="292.0" fill="#4d9221"/>
+<text transform="translate(530.3,450) rotate(-45)" text-anchor="end" class="muted">86 342.58</text>
+<rect x="540.4" y="159.3" width="11.4" height="250.7" fill="#9970ab"/>
+<text transform="translate(546.1,450) rotate(-45)" text-anchor="end" class="muted">215 810.80</text>
+<rect x="556.2" y="204.9" width="11.4" height="205.1" fill="#f4a582"/>
+<text transform="translate(561.9,450) rotate(-45)" text-anchor="end" class="muted">345 279.02</text>
+<rect x="572.0" y="258.2" width="11.4" height="151.8" fill="#92c5de"/>
+<text transform="translate(577.7,450) rotate(-45)" text-anchor="end" class="muted">474 747.24</text>
+<rect x="587.8" y="292.8" width="11.4" height="117.2" fill="#2166ac"/>
+<text transform="translate(593.5,450) rotate(-45)" text-anchor="end" class="muted">604 215.46</text>
+<rect x="603.6" y="339.7" width="11.4" height="70.3" fill="#d6604d"/>
+<text transform="translate(609.3,450) rotate(-45)" text-anchor="end" class="muted">733 683.68</text>
+<rect x="619.4" y="350.7" width="11.4" height="59.3" fill="#4393c3"/>
+<text transform="translate(625.1,450) rotate(-45)" text-anchor="end" class="muted">863 151.90</text>
+<rect x="635.2" y="370.8" width="11.4" height="39.2" fill="#b2182b"/>
+<text transform="translate(640.9,450) rotate(-45)" text-anchor="end" class="muted">992 620.12</text>
+<rect x="651.0" y="387.8" width="11.4" height="22.2" fill="#4d9221"/>
+<text transform="translate(656.7,450) rotate(-45)" text-anchor="end" class="muted">1 122 088</text>
+<rect x="666.8" y="394.8" width="11.4" height="15.2" fill="#9970ab"/>
+<text transform="translate(672.5,450) rotate(-45)" text-anchor="end" class="muted">1 251 557</text>
+<rect x="682.6" y="402.6" width="11.4" height="7.4" fill="#f4a582"/>
+<text transform="translate(688.3,450) rotate(-45)" text-anchor="end" class="muted">1 381 025</text>
+<rect x="698.4" y="405.4" width="11.4" height="4.6" fill="#92c5de"/>
+<text transform="translate(704.1,450) rotate(-45)" text-anchor="end" class="muted">1 510 493</text>
+<rect x="714.2" y="406.5" width="11.4" height="3.5" fill="#2166ac"/>
+<text transform="translate(719.9,450) rotate(-45)" text-anchor="end" class="muted">1 639 961</text>
+<rect x="730.0" y="408.9" width="11.4" height="1.1" fill="#d6604d"/>
+<text transform="translate(735.7,450) rotate(-45)" text-anchor="end" class="muted">1 769 429</text>
+<rect x="745.8" y="407.9" width="11.4" height="2.1" fill="#4393c3"/>
+<text transform="translate(751.5,450) rotate(-45)" text-anchor="end" class="muted">1 898 898</text>
+<rect x="761.6" y="409.3" width="11.4" height="1.0" fill="#b2182b"/>
+<text transform="translate(767.3,450) rotate(-45)" text-anchor="end" class="muted">2 028 366</text>
+<rect x="777.4" y="410.0" width="11.4" height="1.0" fill="#4d9221"/>
+<text transform="translate(783.1,450) rotate(-45)" text-anchor="end" class="muted">2 157 834</text>
+<rect x="793.2" y="410.0" width="11.4" height="1.0" fill="#9970ab"/>
+<text transform="translate(798.9,450) rotate(-45)" text-anchor="end" class="muted">2 287 302</text>
+<rect x="809.0" y="409.6" width="11.4" height="1.0" fill="#f4a582"/>
+<text transform="translate(814.7,450) rotate(-45)" text-anchor="end" class="muted">2 416 771</text>
+<rect x="824.8" y="409.6" width="11.4" height="1.0" fill="#92c5de"/>
+<text transform="translate(830.5,450) rotate(-45)" text-anchor="end" class="muted">2 546 239</text>
+<rect x="840.6" y="410.0" width="11.4" height="1.0" fill="#2166ac"/>
+<text transform="translate(846.3,450) rotate(-45)" text-anchor="end" class="muted">2 675 707</text>
+<rect x="856.4" y="409.6" width="11.4" height="1.0" fill="#d6604d"/>
+<text transform="translate(862.1,450) rotate(-45)" text-anchor="end" class="muted">2 805 175</text>
 </svg>

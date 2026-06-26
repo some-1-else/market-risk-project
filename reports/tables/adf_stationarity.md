@@ -1,20 +1,20 @@
 | factor | adf_stat | p_value | note |
 | --- | --- | --- | --- |
-| SBER |  |  | statsmodels unavailable in current runtime |
-| GAZP |  |  | statsmodels unavailable in current runtime |
-| LKOH |  |  | statsmodels unavailable in current runtime |
-| ROSN |  |  | statsmodels unavailable in current runtime |
-| TATN |  |  | statsmodels unavailable in current runtime |
-| GMKN |  |  | statsmodels unavailable in current runtime |
-| CHMF |  |  | statsmodels unavailable in current runtime |
-| NLMK |  |  | statsmodels unavailable in current runtime |
-| NVTK |  |  | statsmodels unavailable in current runtime |
-| MTSS |  |  | statsmodels unavailable in current runtime |
-| Курс_USD |  |  | statsmodels unavailable in current runtime |
-| Курс_EUR |  |  | statsmodels unavailable in current runtime |
-| IMOEX_CLOSE |  |  | statsmodels unavailable in current runtime |
-| RTSI_CLOSE |  |  | statsmodels unavailable in current runtime |
-| Нефть_Brent |  |  | statsmodels unavailable in current runtime |
-| PC1 |  |  | statsmodels unavailable in current runtime |
-| PC2 |  |  | statsmodels unavailable in current runtime |
-| PC3 |  |  | statsmodels unavailable in current runtime |
+| SBER | -18.371974 | 0 |  |
+| GAZP | -35.678742 | 0 |  |
+| LKOH | -36.460741 | 0 |  |
+| ROSN | -18.067985 | 0 |  |
+| TATN | -8.177243 | 0 |  |
+| GMKN | -36.754447 | 0 |  |
+| CHMF | -19.842124 | 0 |  |
+| NLMK | -19.524142 | 0 |  |
+| NVTK | -14.68838 | 0 |  |
+| MTSS | -26.388898 | 0 |  |
+| Курс_USD | -9.488547 | 0 |  |
+| Курс_EUR | -8.713305 | 0 |  |
+| IMOEX_CLOSE | -20.403327 | 0 |  |
+| RTSI_CLOSE | -6.836341 | 0 |  |
+| Нефть_Brent | -11.910479 | 0 |  |
+| PC1 | -7.457362 | 0 |  |
+| PC2 | -34.293133 | 0 |  |
+| PC3 | -19.102677 | 0 |  |
