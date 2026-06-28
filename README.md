@@ -62,11 +62,7 @@ market-risk-project/
 │   └── run_pipeline.py
 ├── reports/
 │   ├── figures/
-│   ├── tables/
-│   ├── presentation_market_risk.md
-│   ├── qa_for_defense.md
-│   ├── slide_outline.md
-│   └── speaker_notes.md
+│   └── tables/
 ├── df_final.csv
 ├── ofz_final.csv
 ├── requirements.txt
